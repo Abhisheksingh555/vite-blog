@@ -13,13 +13,8 @@ export default function Header({ theme, setTheme }) {
   }, []);
 
   const handleLinkClick = () => setMenuOpen(false);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
-  const getThemeIcon = () =>
-    theme === "light" ? <FiMoon size={20} /> : <FiSun size={20} />;
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+  const getThemeIcon = () => (theme === "light" ? <FiMoon size={20} /> : <FiSun size={20} />);
 
   return (
     <header
@@ -47,7 +42,6 @@ export default function Header({ theme, setTheme }) {
                 hover:text-indigo-500`}
             >
               {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
             </Link>
           ))}
           <button
